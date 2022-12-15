@@ -1,0 +1,30 @@
+﻿@page
+@model MatchMakerDBU.Pages.Lommeregner.IndexModel
+@{
+}
+
+<header>
+    <h1>Velkommen til lommeregneren</h1>
+</header>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nummer</th>
+            <th>Navn</th>
+            <th>Rating</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var spiller in Model.Spillere)
+        {
+            <tr>
+                <td>@spiller.Nummer</td>
+                <td>@spiller.Name</td>
+                <td>@spiller.Rating</td>
+                <td>@spiller.Type</td>
+            </tr>
+        }
+    </tbody>
+</table>
