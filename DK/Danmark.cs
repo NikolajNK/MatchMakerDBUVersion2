@@ -36,7 +36,7 @@ namespace MatchMakerDBU.DK
         };
 
 
-        
+           
         public List<Spiller> GetAllSpillere()
         {
             return new List<Spiller>(_spillere);
