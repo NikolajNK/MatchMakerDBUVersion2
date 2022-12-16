@@ -24,7 +24,11 @@
                 <td>@spiller.Name</td>
                 <td>@spiller.Rating</td>
                 <td>@spiller.Type</td>
+                <td><a asp-page="DeleteSpiller" asp-route-nummer="@spiller.Nummer">Delete</a></td>
+
+
             </tr>
+
         }
     </tbody>
 </table>

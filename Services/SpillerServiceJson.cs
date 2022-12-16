@@ -25,7 +25,7 @@ namespace MatchMakerDBU.Services
             SaveToJson();
         }
 
-        public void Delete(int nummer)
+        public void DeleteSpiller(int nummer)
         {
             Spiller spiller = FindSpiller(nummer);
             _spillere.Remove(spiller);

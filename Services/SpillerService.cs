@@ -3,7 +3,7 @@ using MatchMakerDBU.Model;
 
 namespace MatchMakerDBU.Services
 {
-    public class SpillerService : ISpillerService 
+    public class SpillerService : ISpillerService
     {
         private Danmark _spillere = new Danmark();
 
@@ -11,7 +11,7 @@ namespace MatchMakerDBU.Services
         {
             _spillere.Add(spiller);
         }
-       public void Delete(int nummer)
+       public void DeleteSpiller(int nummer)
         {
             _spillere.DeleteSpiller(nummer);
         }
