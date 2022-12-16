@@ -2,7 +2,10 @@
 {
     public class Spiller : Holdspiller
     {
+        public Spiller()
+        {
 
+        }
 
         public Spiller(int nummer, string name, double rating, SpillerType type)
         {

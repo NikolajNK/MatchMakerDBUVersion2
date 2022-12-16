@@ -1,0 +1,40 @@
+﻿@page
+@model MatchMakerDBU.Pages.Lommeregner.CreateSpillerModel
+@{
+}
+<h1>Opret spiller</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="@Model.Spiller.Nummer" class="control-label">nummer</label><br>
+                <input asp-for="@Model.Spiller.Nummer" class="form-control" /><br>
+            </div>
+
+            <div class="form-group">
+                <label>Navn</label><br>
+                <input asp-for="@Model.Spiller.Name" class="form-control" /><br />
+            </div>
+            <div class="form-group">
+                <label>Rating</label><br>
+                <input asp-for="@Model.Spiller.Rating" class="form-control" /><br />
+            </div>
+            <div class="form-group">
+                <label>Position</label><br>
+                <input asp-for="@Model.Position" class="form-control" /><br />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Opret spilleren" />
+            </div>
+
+        </form>
+
+
+
+
+    </div>
+        
+
+</div>

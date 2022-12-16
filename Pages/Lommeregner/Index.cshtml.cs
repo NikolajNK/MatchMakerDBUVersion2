@@ -19,10 +19,6 @@ namespace MatchMakerDBU.Pages.Lommeregner
         public List<Spiller> Spillere {get; set; }
        
 
-        //public List<Spiller> GetAllSpillere()
-        //{
-        //    throw new NotImplementedException();
-        //} 
         public void OnGet()
         {
             Spillere = _service.GetAllSpillere();
