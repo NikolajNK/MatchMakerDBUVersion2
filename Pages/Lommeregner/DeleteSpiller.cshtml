@@ -1,0 +1,23 @@
+﻿@page
+@model MatchMakerDBU.Pages.Lommeregner.DeleteSpillerModel
+@{
+}
+<h1>Vil du slette spilleren</h1>
+
+<p>Nummer:  @Model.SletSpiller.Nummer</p>
+<p>Navn:    @Model.SletSpiller.Name</p>
+<p>Rating:  @Model.SletSpiller.Rating</p>
+<p>Position:  @Model.SletSpiller.Type</p>
+
+<p></p>
+<form method="post">
+    <div class="form-group">
+        <input type="submit" value="Slet Spiller" asp-page-handler="Slet" asp-route-nummer="@Model.SletSpiller.Nummer" class="btn btn-danger" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Fortryd" asp-page-handler="Fortryd" class="btn btn-primary" />
+    </div>
+</form>
+
+
+
