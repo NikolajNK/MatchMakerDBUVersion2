@@ -3,7 +3,7 @@ using MatchMakerDBU.Model;
 
 namespace MatchMakerDBU.Services
 {
-    public class SpillerService : ISpillerService
+    public class SpillerService : ISpillerService 
     {
         private Danmark _spillere = new Danmark();
 

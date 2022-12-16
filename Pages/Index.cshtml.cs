@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MatchMakerDBU.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MatchMakerDBU.Pages
@@ -14,7 +15,6 @@ namespace MatchMakerDBU.Pages
 
         public void OnGet()
         {
-
         }
     }
 }

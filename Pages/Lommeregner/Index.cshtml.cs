@@ -21,6 +21,15 @@ namespace MatchMakerDBU.Pages.Lommeregner
 
         public void OnGet()
         {
+
+            ////  Hack
+            //SpillerServiceJson service = new SpillerServiceJson();
+            //foreach (var spiller in _service.GetAllSpillere())
+            //{
+            //    service.Add(spiller);
+            //}
+            //// slut hack
+
             Spillere = _service.GetAllSpillere();
         }
     }
