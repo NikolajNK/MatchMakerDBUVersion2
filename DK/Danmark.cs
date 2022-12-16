@@ -56,11 +56,11 @@ namespace MatchMakerDBU.DK
 
         public Spiller FindSpiller(int nummer)
         {
-            foreach (Spiller p in _spillere)
+            foreach (Spiller s in _spillere)
             { 
-                if (p.Nummer == nummer)
+                if (s.Nummer == nummer)
                 {
-                    return p;
+                    return s;
                 }
                     
             }

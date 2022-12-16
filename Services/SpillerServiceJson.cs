@@ -47,10 +47,10 @@ namespace MatchMakerDBU.Services
 
         public Spiller FindSpiller(int nummer)
         {
-            Spiller p = _spillere.Find(p => p.Nummer == nummer);
-                if (p is not null)
+            Spiller s = _spillere.Find(s => s.Nummer == nummer);
+                if (s is not null)
             {
-                return p;
+                return s;
             }
             throw new KeyNotFoundException();
         }

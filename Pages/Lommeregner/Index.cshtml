@@ -24,7 +24,11 @@
                 <td>@spiller.Name</td>
                 <td>@spiller.Rating</td>
                 <td>@spiller.Type</td>
+
+
+                <td><a asp-page="EditSpiller" asp-route-nummer="@spiller.Nummer">Edit</a></td>
             </tr>
+
         }
     </tbody>
 </table>
