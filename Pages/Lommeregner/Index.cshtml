@@ -36,6 +36,40 @@
     </tbody>
 </table>
 
+<h2>Other Team</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nummer</th>
+            <th>Navn</th>
+            <th>Rating</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.ModstanderSpillere != null)
+        {
+            foreach (var spiller in Model.ModstanderSpillere)
+            {
+                <tr>
+                    <td>@spiller.Nummer</td>
+                    <td>@spiller.Name</td>
+                    <td>@spiller.Rating</td>
+                    <td>@spiller.Type</td>
 
+
+                    <td><a asp-page="EditSpiller" asp-route-nummer="@spiller.Nummer">Edit</a></td>
+                    <td><a asp-page="DeleteSpiller" asp-route-nummer="@spiller.Nummer">Delete</a></td>
+
+
+                </tr>
+            }
+        }
+        else
+        {
+            @null
+        }
+    </tbody>
+</table>
 
 <a asp-page="CreateSpiller">Opret</a>

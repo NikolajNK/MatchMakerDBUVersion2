@@ -9,7 +9,7 @@
         public Holdspiller()
         { }
 
-        public Holdspiller(int nummer, string name, double rating, SpillerType type)
+        public Holdspiller(int nummer, string name, double rating, SpillerType type, int hold)
         {
             Nummer = nummer;
 
@@ -18,6 +18,8 @@
             Rating = rating;
 
             Type = type;
+
+            Hold = hold;
 
         }
 
@@ -28,6 +30,8 @@
         public double Rating { get; set; }
 
         public SpillerType Type { get; set; }
+        
+        public int Hold { get; set; }
 
         public virtual string GetInfo()
         {

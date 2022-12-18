@@ -5,7 +5,7 @@ namespace MatchMakerDBU.Services
     {
         public List<Spiller> GetAllSpillere();
 
-        public void Add(Spiller spiller);
+        public void Add(Spiller spillere);
 
         public Spiller FindSpiller(int nummer);
 
