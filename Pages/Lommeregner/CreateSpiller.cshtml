@@ -11,6 +11,7 @@
                 <label asp-for="@Model.Spiller.Nummer" class="control-label">nummer</label><br>
                 <input asp-for="@Model.Spiller.Nummer" class="form-control" /><br>
             </div>
+
             <div class="form-group">
                 <label>Navn</label><br>
                 <input asp-for="@Model.Spiller.Name" class="form-control" /><br />
@@ -27,6 +28,11 @@
                 <label>Hold (1 for danmark, 2 for modstander)</label><br>
                 <input asp-for="@Model.Spiller.Hold" class="form-control" /><br />
             </div>
+
+            @if (!string.IsNullOrEmpty(Model.FejlBesked))
+            {
+                <div class="Fejl">@Model.FejlBesked</div>
+            }
 
             <div class="form-group">
                 <input type="submit" value="Opret spiller" />
