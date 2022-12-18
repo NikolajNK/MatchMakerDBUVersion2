@@ -84,3 +84,5 @@ namespace MatchMakerDBU.Pages.Lommeregner
 
     }
 }
+//spiller forsvinder ved edit hold = 0
+//nummer komplikaton ved samme nummer
