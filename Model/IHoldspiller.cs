@@ -1,9 +1,7 @@
-﻿using System.Xml.Linq;
-
-namespace MatchMakerDBU.Model
+﻿namespace MatchMakerDBU.Model
 {
     public interface IHoldspiller
-    { 
+    {
         int Nummer { get; set; }
 
         string Name { get; set; }
@@ -18,6 +16,6 @@ namespace MatchMakerDBU.Model
 
     }
 
-   
-   
+
+
 }

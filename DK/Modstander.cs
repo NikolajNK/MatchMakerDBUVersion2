@@ -23,7 +23,7 @@ namespace MatchMakerDBU.DK
         public Spiller FindSpiller(int nummer)
         {
             foreach (Spiller s in _spillere)
-            { 
+            {
                 if (s.Nummer == nummer)
                 {
                     return s;
@@ -36,10 +36,11 @@ namespace MatchMakerDBU.DK
         public void EditSpiller(Spiller newValues)
         {
             Spiller editSpiller = FindSpiller(newValues.Nummer);
-    
+
             editSpiller.Name = newValues.Name;
             editSpiller.Rating = newValues.Rating;
             editSpiller.Type = newValues.Type;
+
         }
     }
 }

@@ -32,12 +32,13 @@ namespace MatchMakerDBU.Pages.Lommeregner
 
 
         public IActionResult OnPost()
+
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-          
+
             switch (Position)
             {
                 case "forsvar": Spiller.Type = SpillerType.Forsvar; break;

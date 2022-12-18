@@ -12,5 +12,7 @@ namespace MatchMakerDBU.Services
         public void DeleteSpiller(int nummer);
 
         public void EditSpiller(Spiller newValues);
+
+
     }
 }

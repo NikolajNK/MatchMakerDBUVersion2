@@ -2,7 +2,7 @@
 
 {
 
-    
+
     public class Holdspiller
     {
 
@@ -30,7 +30,7 @@
         public double Rating { get; set; }
 
         public SpillerType Type { get; set; }
-        
+
         public int Hold { get; set; }
 
         public virtual string GetInfo()
@@ -40,7 +40,7 @@
 
         public override string ToString()
         {
-            return $"{nameof(Nummer)} ={Nummer.ToString()},{nameof(Name)}={Name}, {nameof(Rating)} ={Rating.ToString()}, {nameof(Type)} ={Type.ToString()} ";
+            return $"{nameof(Nummer)} ={Nummer.ToString()},{nameof(Name)}={Name}, {nameof(Rating)} ={Rating.ToString()}, {nameof(Type)} ={Type.ToString()} {nameof(Hold)} ={Type.ToString()} ";
         }
 
 

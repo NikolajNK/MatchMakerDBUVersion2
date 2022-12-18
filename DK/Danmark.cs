@@ -37,7 +37,7 @@ namespace MatchMakerDBU.DK
         };
 
 
-           
+
         public List<Spiller> GetAllSpillere()
         {
             return new List<Spiller>(_spillere);
@@ -47,8 +47,8 @@ namespace MatchMakerDBU.DK
         {
             _spillere.Add(spiller);
         }
-        
-       public void DeleteSpiller(int nummer)
+
+        public void DeleteSpiller(int nummer)
         {
             Spiller sletSpiller = FindSpiller(nummer);
             _spillere.Remove(sletSpiller);
@@ -58,12 +58,12 @@ namespace MatchMakerDBU.DK
         public Spiller FindSpiller(int nummer)
         {
             foreach (Spiller s in _spillere)
-            { 
+            {
                 if (s.Nummer == nummer)
                 {
                     return s;
                 }
-                    
+
             }
 
             throw new KeyNotFoundException();
@@ -74,15 +74,12 @@ namespace MatchMakerDBU.DK
         public void EditSpiller(Spiller newValues)
         {
             Spiller editSpiller = FindSpiller(newValues.Nummer);
-    
+
             editSpiller.Name = newValues.Name;
             editSpiller.Rating = newValues.Rating;
             editSpiller.Type = newValues.Type;
 
         }
-
-
-
 
 
     }

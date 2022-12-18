@@ -1,9 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
-using MatchMakerDBU.DK;
 using MatchMakerDBU.Model;
-using MatchMakerDBU.Pages;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using MatchMakerDBU.Services;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MatchMakerDBU.Pages.Lommeregner
 {
@@ -16,11 +13,15 @@ namespace MatchMakerDBU.Pages.Lommeregner
             _service = service;
         }
 
-        public List<Spiller> Spillere {get; set; }
-       
-        public List<Spiller> ModstanderSpillere { get; set; }
+        public List<Spiller> Spillere { get; set; }
+
         public void OnGet()
         {
+            Spillere = _service.GetAllSpillere();
+
+            //Nikolaj laver gennemsnsitsmetode
+            double GennemsnitHold1 = UdregnGennemsnit(1);
+            double GennemsnitHold2 = UdregnGennemsnit(2);
 
             ////  Hack
             //SpillerServiceJson service = new SpillerServiceJson();
@@ -31,9 +32,26 @@ namespace MatchMakerDBU.Pages.Lommeregner
             //// slut hack
 
 
-            //Nikolaj laver gennemsnsitsmetode
 
-            Spillere = _service.GetAllSpillere();
         }
+
+        public double UdregnGennemsnit(int hold)
+        {
+
+            var players = Spillere.Where(s => s.Hold == hold);
+
+
+            double sum = 0;
+            foreach (var player in players)
+            {
+                sum += player.Rating;
+            }
+
+
+            double average = sum / players.Count();
+
+            return average;
+        }
+
     }
 }

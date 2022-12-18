@@ -1,8 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using MatchMakerDBU.Model;
 using MatchMakerDBU.Services;
-using MatchMakerDBU.DK;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MatchMakerDBU.Pages.Lommeregner
 {
@@ -28,8 +27,10 @@ namespace MatchMakerDBU.Pages.Lommeregner
         public double Rating { get; set; }
 
         [BindProperty]
-        public string Position { get => position; set => position = value.ToLower(); } 
-    
+        public string Position { get => position; set => position = value.ToLower(); }
+
+        [BindProperty]
+        public int Hold { get; set; }
 
         public void OnGet(int nummer)
         {
@@ -39,10 +40,11 @@ namespace MatchMakerDBU.Pages.Lommeregner
             Name = editSpiller.Name;
             Rating = editSpiller.Rating;
             Position = editSpiller.Type.ToString();
+            Hold = editSpiller.Hold;
 
         }
 
- 
+
 
         public IActionResult OnPostEdit()
         {
@@ -55,6 +57,7 @@ namespace MatchMakerDBU.Pages.Lommeregner
             editSpiller.Nummer = Nummer;
             editSpiller.Name = Name;
             editSpiller.Rating = Rating;
+            editSpiller.Hold = Hold;
 
             switch (Position)
             {
