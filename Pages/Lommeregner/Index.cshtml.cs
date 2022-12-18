@@ -18,7 +18,7 @@ namespace MatchMakerDBU.Pages.Lommeregner
 
         public List<Spiller> Spillere {get; set; }
        
-
+        public List<Spiller> ModstanderSpillere { get; set; }
         public void OnGet()
         {
 

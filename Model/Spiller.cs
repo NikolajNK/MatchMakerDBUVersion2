@@ -7,7 +7,7 @@
 
         }
 
-        public Spiller(int nummer, string name, double rating, SpillerType type)
+        public Spiller(int nummer, string name, double rating, SpillerType type, int hold)
         {
             Nummer = nummer;
 
@@ -16,6 +16,8 @@
             Rating = rating;
 
             Type = type;
+
+            Hold = hold;
         }
 
         //public object SpillerType { get; internal set; }

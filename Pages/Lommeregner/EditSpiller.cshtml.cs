@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MatchMakerDBU.Model;
 using MatchMakerDBU.Services;
+using MatchMakerDBU.DK;
 
 namespace MatchMakerDBU.Pages.Lommeregner
 {

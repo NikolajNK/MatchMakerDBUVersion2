@@ -12,6 +12,8 @@ namespace MatchMakerDBU.Model
 
         SpillerType Type { get; set; }
 
+        int Hold { get; set; }
+
         string GetInfo();
 
     }
