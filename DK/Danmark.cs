@@ -78,7 +78,7 @@ namespace MatchMakerDBU.DK
             editSpiller.Name = newValues.Name;
             editSpiller.Rating = newValues.Rating;
             editSpiller.Type = newValues.Type;
-
+            editSpiller.Hold = newValues.Hold;
         }
 
 
