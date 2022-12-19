@@ -4,6 +4,7 @@ namespace MatchMakerDBU.DK
 {
     public class Danmark : Holdspiller
     {
+        
         private List<Spiller> _spillere = new List<Spiller>()
         {
             new Spiller(1,"Kasper Schmeichel", 88, SpillerType.Målmand),
