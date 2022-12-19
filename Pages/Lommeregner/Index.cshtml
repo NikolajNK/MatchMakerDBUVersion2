@@ -17,13 +17,14 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var spiller in Model.Spillere)
+        @foreach (var spiller in Model.Spillere.Where(s => s.Hold == 1))
         {
             <tr>
                 <td>@spiller.Nummer</td>
                 <td>@spiller.Name</td>
                 <td>@spiller.Rating</td>
                 <td>@spiller.Type</td>
+                
 
 
                 <td><a asp-page="EditSpiller" asp-route-nummer="@spiller.Nummer">Edit</a></td>
@@ -35,7 +36,40 @@
         }
     </tbody>
 </table>
+<div>Gennemsnittet af hold 1's rating er: @Model.UdregnGennemsnit(1) </div>
+<table>
+    <thead>
+        <tr>
+            <th>Nummer</th>
+            <th>Navn</th>
+            <th>Rating</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        
+        @foreach (var spiller in Model.Spillere.Where(s => s.Hold == 2))
+        {
+        <tr>
+            
+                <td>@spiller.Nummer</td>
+                <td>@spiller.Name</td>
+                <td>@spiller.Rating</td>
+                <td>@spiller.Type</td>
 
 
 
+                <td><a asp-page="EditSpiller" asp-route-nummer="@spiller.Nummer">Edit</a></td>
+                <td><a asp-page="DeleteSpiller" asp-route-nummer="@spiller.Nummer">Delete</a></td>
+
+
+            </tr>
+        }
+
+
+    </tbody>
+
+</table>
+        <div>Gennemsnittet af hold 2's rating er: @Model.UdregnGennemsnit(2) </div>
 <a asp-page="CreateSpiller">Opret</a>

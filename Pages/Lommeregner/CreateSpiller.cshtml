@@ -24,9 +24,18 @@
                 <label>Position</label><br>
                 <input asp-for="@Model.Position" class="form-control" /><br />
             </div>
+            <div class="form-group">
+                <label>Hold (1 for danmark, 2 for modstander)</label><br>
+                <input asp-for="@Model.Spiller.Hold" class="form-control" /><br />
+            </div>
+
+            @if (!string.IsNullOrEmpty(Model.FejlBesked))
+            {
+                <div class="Fejl">@Model.FejlBesked</div>
+            }
 
             <div class="form-group">
-                <input type="submit" value="Opret spilleren" />
+                <input type="submit" value="Opret spiller" />
             </div>
 
         </form>
@@ -38,3 +47,4 @@
         
 
 </div>
+
