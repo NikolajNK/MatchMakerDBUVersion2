@@ -72,6 +72,11 @@ namespace MatchMakerDBU.Pages.Lommeregner
 
         }
 
+        public IActionResult OnPostFortryd()
+        {
+            return RedirectToPage("Index");
+        }
+
 
     }
 }

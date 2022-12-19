@@ -30,6 +30,9 @@ namespace MatchMakerDBU.Pages.Lommeregner
             //}
             //// slut hack
 
+
+            //Nikolaj laver gennemsnsitsmetode
+
             Spillere = _service.GetAllSpillere();
         }
     }
