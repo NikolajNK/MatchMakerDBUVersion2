@@ -7,11 +7,11 @@ namespace MatchMakerDBU.Services
     {
         private Danmark _spillere = new Danmark();
 
-       public void Add(Spiller spiller)
+        public void Add(Spiller spiller)
         {
             _spillere.Add(spiller);
         }
-       public void DeleteSpiller(int nummer)
+        public void DeleteSpiller(int nummer)
         {
             _spillere.DeleteSpiller(nummer);
         }
@@ -27,5 +27,7 @@ namespace MatchMakerDBU.Services
         {
             return _spillere.GetAllSpillere();
         }
+
+
     }
 }

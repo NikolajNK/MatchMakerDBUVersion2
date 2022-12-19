@@ -9,6 +9,8 @@ namespace MatchMakerDBU.Pages.Lommeregner
     {
         private ISpillerService _service;
         private string position;
+        public string FejlBesked { get; set; }
+
 
 
         //properties
@@ -33,11 +35,12 @@ namespace MatchMakerDBU.Pages.Lommeregner
 
         public IActionResult OnPost()
         {
+
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-          
+
             switch (Position)
             {
                 case "forsvar": Spiller.Type = SpillerType.Forsvar; break;
@@ -48,11 +51,25 @@ namespace MatchMakerDBU.Pages.Lommeregner
                     break;
             }
 
+            var Spillere = _service.GetAllSpillere();
+
+            if (Spillere.Any(s => s.Nummer == Spiller.Nummer && s.Hold == Spiller.Hold))
+            {
+
+                FejlBesked = "Du prøver at oprette en spiller med et nummer som allerede er optaget på holdet";
+                return Page();
+            }
+
+            if (Spiller.Rating < 1 || Spiller.Rating > 99)
+            {
+                FejlBesked = "Rating må kun være fra 1 til 99";
+                return Page();
+            }
 
             _service.Add(Spiller);
 
             return RedirectToPage("Index");
-
         }
+
     }
 }

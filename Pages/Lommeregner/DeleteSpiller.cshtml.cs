@@ -9,12 +9,7 @@ namespace MatchMakerDBU.Pages.Lommeregner
     {
 
         private ISpillerService _service;
-        //private string position;
 
-
-
-        //[BindProperty]
-        //public string Position { get => position; set => position = value.ToLower(); }
 
         [BindProperty]
         public Spiller SletSpiller { get; set; }
@@ -34,15 +29,6 @@ namespace MatchMakerDBU.Pages.Lommeregner
 
         public IActionResult OnPostSlet(int nummer)
         {
-            //switch (Position)
-            //{
-            //    case "forsvar": SletSpiller.Type = SpillerType.Forsvar; break;
-            //    case "målmand": SletSpiller.Type = SpillerType.Målmand; break;
-            //    case "midtbane": SletSpiller.Type = SpillerType.Midtbane; break;
-            //    case "angriber": SletSpiller.Type = SpillerType.Angriber; break;
-            //    default:
-            //        break;
-            //}
             _service.DeleteSpiller(nummer);
 
             return RedirectToPage("Index");
