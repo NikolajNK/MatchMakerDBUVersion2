@@ -3,9 +3,13 @@
 @{
 }
 
-<header>
+@*<header>
     <h1>Velkommen til lommeregneren</h1>
 </header>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
 
 <table>
     <thead>
@@ -35,6 +39,7 @@
 
         }
     </tbody>
+                
 </table>
 <div>Gennemsnittet af hold 1's rating er: @Model.UdregnGennemsnit(1) </div>
 <table>
@@ -63,13 +68,77 @@
                 <td><a asp-page="EditSpiller" asp-route-nummer="@spiller.Nummer">Edit</a></td>
                 <td><a asp-page="DeleteSpiller" asp-route-nummer="@spiller.Nummer">Delete</a></td>
 
+        <a asp-page="CreateSpiller">Opret</a>
+</div>
+</div>
+</div>
 
             </tr>
         }
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
 
+        <p>TEST</p>
 
     </tbody>
 
 </table>
         <div>Gennemsnittet af hold 2's rating er: @Model.UdregnGennemsnit(2) </div>
 <a asp-page="CreateSpiller">Opret</a>
+    <a asp-page="CreateSpiller">Opret</a>
+</div>
+</div>
+</div>
+*@
+         
+
+<div class="container-fluid mt-3">
+    <h1>Lommeregner</h1>
+       
+    <div class="row">
+        <div class="col p-6 bg-danger text-white">
+            <table>
+                <thead>
+                    <tr>
+                        
+                        <th>Nummer</th>
+                        <th>Navn</th>
+                        <th>Rating</th>
+                        <th>Type</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var spiller in Model.Spillere)
+                    {
+                        <tr>
+                            <td>@spiller.Nummer</td>
+                            <td>@spiller.Name</td>
+                            <td>@spiller.Rating</td>
+                            <td>@spiller.Type</td>
+
+
+                            <td><a class="btn btn-dark" asp-page="EditSpiller" asp-route-nummer="@spiller.Nummer">Edit</a></td>
+                            <td><a class="btn btn-dark" asp-page="DeleteSpiller" asp-route-nummer="@spiller.Nummer">Delete</a></td>
+                               
+
+                        </tr>
+
+                    }
+                </tbody>
+
+            </table>
+            <a class="btn btn-dark" asp-page="CreateSpiller">Opret spiller</a>
+            
+            
+        </div>
+        <div class="col p-6 bg-dark text-white">
+            <p>Modstander</p>
+            
+
+            <a class="btn btn-danger" asp-page="CreateSpiller">Opret spiller</a>
+        </div>
+        
+    </div>
+</div>
